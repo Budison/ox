@@ -1,12 +1,12 @@
-package com.github.budison.ox.io.reading;
+package com.github.budison.ox.configuration;
 
-import com.github.budison.ox.Language;
 import org.tinylog.Logger;
 
-class LanguageReader implements Reader<Language> {
+import java.util.Scanner;
 
-    @Override
-    public Language read() {
+class ReadingValidator {
+
+    static int validateTwoOptions(Scanner scanner, String callerClassName) {
         boolean repeat = true;
         int inputInt = 1;
         while (repeat) {
@@ -18,13 +18,12 @@ class LanguageReader implements Reader<Language> {
                     throw new IllegalArgumentException();
                 }
             } catch (IllegalArgumentException illegalArgumentException) {
-                System.err.print("Invalid input! Try again / Falsche Eingabe! Bitte versuche es erneut: ");
-                Logger.info("LanguageReader: invalid input [input=" + inputString + "]");
+                System.err.println("[INVALID INPUT]: " + inputString);
+                Logger.info(callerClassName + ": invalid input [input=" + inputString + "]");
                 repeat = true;
             }
         }
-        scanner.close();
-        Logger.info("LanguageReader: read input successfully [input=" + inputInt + "]");
-        return Language.values()[inputInt - 1];
+        Logger.info(callerClassName + ": read input successfully [input=" + inputInt + "]");
+        return inputInt;
     }
 }
