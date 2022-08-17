@@ -8,7 +8,7 @@ class PlayModeReader implements Reader<PlayMode> {
 
     private final Scanner scanner;
 
-    public PlayModeReader(Scanner scanner) {
+    PlayModeReader(Scanner scanner) {
         this.scanner = scanner;
     }
 

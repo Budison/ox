@@ -10,8 +10,8 @@ class PlayModePrinter implements Printer {
     public void print(Properties languageProperties) {
         System.out.print("""
                 
-                [1] Demo
-                [2] 1v1
+                [1] 1v1
+                [2] Demo
                 
                 """);
         System.out.print(languageProperties.getProperty("PLAYMODE") + ": ");

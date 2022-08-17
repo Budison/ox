@@ -15,6 +15,7 @@ class PrintingHandler {
     private final LanguagePrinter languagePrinter;
     private final WelcomePrinter welcomePrinter;
     private final PlayModePrinter playModePrinter;
+    private final PlayerOConfigPrinter playerOConfigPrinter;
 
     PrintingHandler() {
         languageProperties = new Properties();
@@ -23,6 +24,7 @@ class PrintingHandler {
         languagePrinter = new LanguagePrinter();
         welcomePrinter = new WelcomePrinter();
         playModePrinter = new PlayModePrinter();
+        playerOConfigPrinter = new PlayerOConfigPrinter();
     }
 
     private Map<Language, String> makeLanguagePropertiesMap() {
@@ -58,5 +60,9 @@ class PrintingHandler {
 
     void printPlayMode() {
         playModePrinter.print(languageProperties);
+    }
+
+    void printPlayerOName() {
+        playerOConfigPrinter.print(languageProperties);
     }
 }

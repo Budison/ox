@@ -21,4 +21,13 @@ class IOHandler {
         printingHandler.printPlayMode();
         return readingHandler.readPlayMode();
     }
+
+    String playerO() {
+        printingHandler.printPlayerOName();
+        return readingHandler.readPlayerName();
+    }
+
+    String playerX() {
+        return null;
+    }
 }

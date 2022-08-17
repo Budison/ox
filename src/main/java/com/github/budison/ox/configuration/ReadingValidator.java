@@ -26,4 +26,10 @@ class ReadingValidator {
         Logger.info(callerClassName + ": read input successfully [input=" + inputInt + "]");
         return inputInt;
     }
+
+    static String validateName(Scanner scanner, String callerClassName) {
+        String inputString = scanner.next();
+        Logger.info(callerClassName + ": read input successfully [input=" + inputString + "]");
+        return inputString;
+    }
 }
